@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio</title>
+    <title>TeamHopePortfolio</title>
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/2917/2917242.png" type="image/png">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -17,6 +18,7 @@
             <a href="#skills" class="menu-link">Skills</a>
             <a href="#contact" class="menu-link">Contact</a>
         </nav>
+        <button id="theme-toggle" class="theme-toggle-btn">🌙</button>
     </header>
     <main>
         <section id="about">
@@ -73,13 +75,10 @@
                         
                     </div>
                 </div>
-                <div class="project-card">
-                    <img src="./recources/images/Feedback_sample.png" alt="Personal Portfolio">
-                    <h3>Personal Portfolio</h3>
-                    <p>A responsive and modern portfolio website to showcase my work and skills.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/Group-Git-Repositories/Feedback.git" target="_blank">GitHub</a>
-                        
+                <div class="project-card coming-soon">
+                    <div class="coming-soon-content">
+                        <h3>🚀 More Projects Coming Soon</h3>
+                        <p>We're working on exciting new projects.</p>
                     </div>
                 </div>
             </div>
@@ -134,12 +133,36 @@
                 </li>
                 <li>
                     <img src="https://cdn-icons-png.flaticon.com/128/4423/4423663.png" class="contact-icon" alt="Telegram icon">
-                    <a href="https://github.com/janedoe" target="_blank">Hope_Team_Telegram</a>
+                    <a href="https://t.me/hope_teams" target="_blank">Hope_Team_Telegram</a>
                 </li>
             </ul>
         </section>
     </main>
+    <footer>
+        <p>&copy; 2026 Team Hope. All rights reserved.</p>
+        <p>Built with passion in Addis Ababa.</p>
+    </footer>
     <script>
+    // Theme toggle
+    const toggle = document.getElementById('theme-toggle');
+    const currentTheme = localStorage.getItem('theme');
+    if (currentTheme) {
+        document.body.classList.add(currentTheme);
+    }
+    updateToggleIcon();
+
+    toggle.addEventListener('click', function() {
+        document.body.classList.toggle('light-mode');
+        const theme = document.body.classList.contains('light-mode') ? 'light-mode' : '';
+        localStorage.setItem('theme', theme);
+        updateToggleIcon();
+    });
+
+    function updateToggleIcon() {
+        const isLight = document.body.classList.contains('light-mode');
+        toggle.textContent = isLight ? '☀️' : '🌙';
+    }
+
     // Smooth scroll active section highlighting
     const menuLinks = document.querySelectorAll('.menu-link');
     const sections = [...document.querySelectorAll('main section')];
