@@ -397,3 +397,7 @@
         justify-content: space-between;
       }
     }
+/* Change all links to a specific color */
+a {
+  color: #894B0A;  /* Your brown accent */
+}
