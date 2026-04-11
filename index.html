@@ -172,9 +172,12 @@
     <h2 class="section-title">Contact Us</h2>
     <p>Interested in collaborating? Reach us by email, GitHub, or Telegram.</p>
     <form action="https://formspree.io/f/xykbqawk" method="POST">
-      <input type="text" name="name" placeholder="Your name" required>
-      <input type="email" name="_replyto" placeholder="Your email" required>
-      <textarea name="message" placeholder="Your message" rows="4" required></textarea>
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your name" required>
+      <label for="email">Email</label>
+      <input type="email" id="email" name="_replyto" placeholder="Your email" autocomplete="email" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Your message" rows="4" required></textarea>
       <button type="submit">Send Message</button>
     </form>
     <div class="contact-info">
